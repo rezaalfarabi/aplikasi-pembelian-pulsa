@@ -1,0 +1,52 @@
+  <% include ./partials/header %>
+  <main>
+    <div class="container">
+      <h4>Transaction</h4>
+      <form action="/api/transaction/add" method="post">
+        <div class="row">
+          <div class="input-field col s6">
+            <input name="phone_number" type="text" class="validate">
+            <label for="phone_number">Phone Number</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <label>Operator</label>
+          <select class="browser-default" name="operatorId">
+            <option value="" disabled selected>Choose your option</option>
+            <% for(let operator of data){ %>
+              <option value="<%= operator.id%>">
+                <%= operator.nama_operator %>
+              </option>
+              <%}%>
+          </select>
+        </div>
+
+        <div class="row">
+          <label>Pulsa</label>
+          <select class="browser-default" name="voucherId">
+          <option value="" disabled selected>Choose your option</option>
+            <option>10000</option>
+            <option>20000</option>
+            <option>25000</option>
+            <option>50000</option>
+            <option>100000</option>
+          </select>
+        </div>
+
+
+        <div class="row">
+          <div class="input-field col s6">
+            <input name="voucher" type="text" class="validate">
+            <label for="voucher">Harga</label>
+          </div>
+        </div>
+
+        <button class="btn waves-effect waves-light" type="submit">Save Transaction
+          <i class="material-icons right">send</i>
+        </button>
+
+      </form>
+    </div>
+  </main>
+  <% include ./partials/footer %>

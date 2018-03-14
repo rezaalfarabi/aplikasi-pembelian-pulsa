@@ -1,0 +1,37 @@
+<% include partials/header%>
+<main>
+  <div class="container">
+    <div class="row">
+<h4>All Transaction Data</h4>
+<a id="button" class="waves-effect waves-light btn" href="/api/transaction/add">Tambah</a>
+<table border="1" class="highlight">
+  <thead>
+    <th>No</th>
+    <th>Phone Number</th>
+    <th>Operator</th>
+    <th>Pulsa</th>
+    <th>Harga</th>
+  </thead>
+  <tbody class="highlight">
+    <% let no = 1;
+     data.forEach(transaction => {%>
+        <tr>
+          <td><%= no++ %></td>
+          <td><%= transaction.phone_number%></td>
+          <%if(transaction.Operator){%>
+                  <td>
+                    <%= transaction.Operator.nama_operator %>
+                  </td>
+                  <%} else {%>
+                    <td>Unassigned</td>
+                  <%}%>
+        <td><%= transaction.voucherId%></td>
+          <td><%= transaction.voucher%></td>
+        </tr>
+      <%})%>
+  </tbody>
+</table>
+</div>
+</div>
+</main>
+<% include ./partials/footer %>

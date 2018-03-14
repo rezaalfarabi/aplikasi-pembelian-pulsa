@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+  <main>
+    <div class="container">
+      <form class="" action="/api/voucher/edit/<%=data.id%>" method="post">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="harga" name="harga" value="<%=data.harga%>" type="number" >
+            <label for="harga">Harga</label>
+          </div>
+        </div>
+            <button class="btn waves-effect waves-light" type="submit">Edit
+              <i class="material-icons right">send</i>
+            </button>
+      </form>
+    </div>
+  </main>
+<% include ./partials/footer %>

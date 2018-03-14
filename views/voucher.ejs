@@ -1,0 +1,29 @@
+<% include partials/header%>
+<main>
+  <div class="container">
+    <div class="row">
+<h4>All Voucher Data</h4>
+<a id="button" class="waves-effect waves-light btn" href="/api/voucher/add">Tambah</a>
+<table border="1" class="highlight">
+  <thead>
+    <th>No</th>
+    <th>Harga</th>
+    <th>Option</th>
+  </thead>
+  <tbody class="highlight">
+    <% let no = 0;
+     data.forEach(voucher => {%>
+        <tr>
+          <td><%= ++no %></td>
+          <td><%=voucher.harga%></td>
+          <td><a href="/api/voucher/edit/<%=voucher.id%>">Edit</a> ||
+          <a href="/api/voucher/delete/<%=voucher.id%>"
+            onclick="return confirm('anda yakin ingin menghapus data voucher?')">Delete</a></td>
+        </tr>
+      <%})%>
+  </tbody>
+</table>
+</div>
+</div>
+</main>
+<% include ./partials/footer %>

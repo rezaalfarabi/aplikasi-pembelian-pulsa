@@ -1,0 +1,17 @@
+  <% include ./partials/header %>
+    <main>
+      <div class="container">
+        <form action="/api/operator/add" method="post">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="nama_operator" name="nama_operator" type="text" required >
+              <label for="nama_operator">Nama Operator</label>
+            </div>
+          </div>
+              <button class="btn waves-effect waves-light" type="submit">Tambah
+                <i class="material-icons right">send</i>
+              </button>
+        </form>
+      </div>
+    </main>
+    <% include ./partials/footer %>
